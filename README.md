@@ -24,3 +24,5 @@ go install github.com/gobuffalo/cli/cmd/buffalo@latest
 
 Once installed, the Buffalo CLI can be used by invoking the `buffalo` command. To know more about the available commands, run the `buffalo help` command. or you can also get details on a specific command by running `buffalo help <command>`.
 # simple-bank
+# simple-bank
+# simple-bank
