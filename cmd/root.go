@@ -4,6 +4,7 @@ import (
 	"os"
 
 	"github.com/hacker301et/sec1/cmd/net"
+	"github.com/hacker301et/sec1/cmd/web"
 	"github.com/spf13/cobra"
 )
 
@@ -31,6 +32,7 @@ var rootCmd = &cobra.Command{
 
 func addSubCommands() {
 	rootCmd.AddCommand(net.NetCmd)
+	rootCmd.AddCommand(web.WebCmd)
 }
 func Execute() {
 	err := rootCmd.Execute()
