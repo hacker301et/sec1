@@ -11,23 +11,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "sec1",
 	Short: "Command-Line Security Toolkit: For Network & Web Pen Testing",
-	Long: `
-	🔐 Strengthen your defenses with our command-line security toolkit
-	   – the ultimate solution for network and website penetration testing.
-	    Identify vulnerabilities, fortify your digital assets, and stay one step ahead of threats, all from the command line.
-	
-        🔧 **Features:**
-	   - Network Penetration Testing
-	   - Website Security Assessment
-	   - Real-Time Insights
-	   - User-Friendly Interface
-	
-	🌐 **Why Choose Us:**
-	   - Unified Solution
-	   - Scalable for All Skill Levels
-	   - Continuous Updates
-
-	`,
+	Long: ``,
 }
 
 func addSubCommands() {
