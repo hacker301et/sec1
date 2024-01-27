@@ -202,6 +202,9 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			return m, cmd
 		}
 		m.rowTracker[teaMsg.FQDN] = true
+		domains, _ := m.readCSV()
+		domains = append(domains, teaMsg)
+		m.writeCSV(domains)
 		if strings.Contains(teaMsg.FQDN, "api") {
 			m.apiFound = true
 			m.apiRows = append(m.apiRows, table.Row{teaMsg.ToolName, teaMsg.FQDN})
