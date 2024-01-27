@@ -12,6 +12,7 @@ var rootCmd = &cobra.Command{
 	Use:   "sec1",
 	Short: "Command-Line Security Toolkit: For Network & Web Pen Testing",
 	Long:  ``,
+
 }
 
 func addSubCommands() {
