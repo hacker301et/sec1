@@ -1,8 +1,12 @@
 package view
 
 import (
+	"fmt"
+	"os"
 	"strings"
 	"sync"
+
+	csv "github.com/gocarina/gocsv"
 
 	"github.com/charmbracelet/bubbles/spinner"
 	"github.com/charmbracelet/bubbles/table"
@@ -21,6 +25,30 @@ const (
 	SUBFINDER = "Subfinder"
 	STARTDATE = 30
 )
+
+func (m *model) readCSV() ([]models.ResponseMsg, error) {
+	fileName := fmt.Sprintf("scans/%s.csv", m.FQDN.Value())
+	file, err := os.OpenFile(fileName, os.O_RDWR|os.O_CREATE, os.ModePerm)
+	if err != nil {
+		return []models.ResponseMsg{}, err
+	}
+	defer file.Close()
+	var domains []models.ResponseMsg
+	if err := csv.UnmarshalFile(file, &domains); err != nil {
+		return []models.ResponseMsg{}, err
+	}
+	return domains, nil
+
+}
+func (m *model) writeCSV(domains []models.ResponseMsg) error {
+	dirName := fmt.Sprintf("scans/%s.csv", m.FQDN.Value())
+	file, err := os.OpenFile(dirName, os.O_RDWR|os.O_CREATE, os.ModePerm)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	return csv.MarshalFile(domains, file)
+}
 
 type model struct {
 	Sub        chan models.ResponseMsg
