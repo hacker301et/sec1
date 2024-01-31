@@ -12,7 +12,10 @@ var NetCmd = &cobra.Command{
 		cmd.Help()
 	},
 }
-
-func init() {
+func addCommand(){
 	NetCmd.AddCommand(scanCmd)
+	NetCmd.AddCommand(getMyPublicIpCmd)
+}
+func init() {
+	addCommand()
 }
