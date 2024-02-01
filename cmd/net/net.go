@@ -15,6 +15,8 @@ var NetCmd = &cobra.Command{
 func addCommand(){
 	NetCmd.AddCommand(scanCmd)
 	NetCmd.AddCommand(getMyPublicIpCmd)
+	NetCmd.AddCommand(chageMacCmd)
+
 }
 func init() {
 	addCommand()
