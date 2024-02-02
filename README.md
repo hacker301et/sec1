@@ -29,3 +29,9 @@ Penetration testing is a critical aspect of securing information systems. Sec1 i
  go run main.go
 ```
 
+|         | Command                                                            | Example                                                           | Usage                                                                                     |
+|---------|--------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| network | ```go run main.go net port-scan -a ip-address -w [workers]```      | ```go run main.go net port-scan -a 192.168.0.1```                 | Scan for open ports. Use the `-w` flag to specify the number of workers (default is 100). |
+| network | ```go run main.go net my-public-ip```                              | ```go run main.go net my-public-ip```                             | Retrieve your public IP address.                                                          |
+| network | ```go run main.go net change-mac -i interfaceName -m macAddress``` | ```go run main.go net change-mac -i wlan0 -m 00:11:22:33:44:55``` | Change the MAC address of the specified interface. The `-m` flag is optional.             |
+| web     | ```go run main.go web live-sub```                                  | ```go run main.go web live-sub```                                 | Use the live-sub domain finder tool.                                                      |
